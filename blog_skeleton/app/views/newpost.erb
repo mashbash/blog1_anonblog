@@ -1,0 +1,22 @@
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+</style>
+
+<div class="container">
+  <h1>Create Your New Post</h1>
+  <form name="newpost" action="/post" method="post">
+  <label name="title">Title</label>
+  <input name="title" type="string" placeholder="Type title here"/>
+  <label name="content">Content</label>
+  <textarea name="content" cols="60" rows="30" placeholder="Type your blogpost here"></textarea>
+  <label name="tags">tag it!</label>
+  <input name="tags" type="string" placeholder="tag, tag, tag"/>
+  <input type="submit" value="Submit Post"/>
+  </form>
+
+</div>

@@ -1,0 +1,28 @@
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+</style>
+
+<div class="container">
+  <h1><%= @post.title %></h1>
+  <span>
+    <form name="edit" action="/post/edit" method="post">
+    <input type="submit" value="Edit post"/>
+    </form>
+  </span>  
+  <span>
+    <form name="delete" action="/post/delete" method="get">
+    <input type="submit" value="Delete post"/>
+    </form>
+  </span>  
+  <p><%= @post.content %></p>
+  <% @post.tags.each do |tag| %>
+  <div>tags</div>
+  <div><%= tag[:description] %></div>
+  <% end %>
+</div>
+
