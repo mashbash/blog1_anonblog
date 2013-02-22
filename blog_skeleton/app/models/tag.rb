@@ -1,6 +1,5 @@
 class Tag < ActiveRecord::Base
   # Remember to create a migration!
-  has_many :post_tags
-  has_many :posts, :through => :task_tags
+  has_and_belongs_to_many :posts
 
 end
