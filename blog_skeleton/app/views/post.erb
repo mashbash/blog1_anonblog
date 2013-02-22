@@ -10,12 +10,13 @@
 <div class="container">
   <h1><%= @post.title %></h1>
   <span>
-    <form name="edit" action="/post/edit" method="post">
+    <form name="edit" action="/post/edit/<%= @post.id %>" method="get">
+    <!-- learn to send hidden id here -->
     <input type="submit" value="Edit post"/>
     </form>
   </span>  
   <span>
-    <form name="delete" action="/post/delete" method="get">
+    <form name="delete" action="/post/delete" method="post">
     <input type="submit" value="Delete post"/>
     </form>
   </span>  
