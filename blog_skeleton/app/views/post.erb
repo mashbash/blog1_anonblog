@@ -11,19 +11,20 @@
   <h1><%= @post.title %></h1>
   <span>
     <form name="edit" action="/post/edit/<%= @post.id %>" method="get">
-    <!-- learn to send hidden id here -->
     <input type="submit" value="Edit post"/>
     </form>
   </span>  
   <span>
     <form name="delete" action="/post/delete" method="post">
+    <input type="hidden" name="post_id" value="<%= @post.id %>"/>
     <input type="submit" value="Delete post"/>
     </form>
   </span>  
   <p><%= @post.content %></p>
-  <% @post.tags.each do |tag| %>
   <div>tags</div>
-  <div><%= tag[:description] %></div>
+  <% @post.tags.each do |tag| %>
+  <div><a href="../tag/<%= tag[:description] %>"><%= tag[:description] %></a></div>
   <% end %>
+  <a href="/">&larr; Return to home</a>
 </div>
 

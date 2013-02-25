@@ -1,0 +1,17 @@
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+</style>
+
+<div class="container">
+  <h1>Posts that have the tag:<%= @tag %></h1>
+  <% @posts_of_tag.each do |post| %>
+  <h2><a href="../post/<%= post.id %>"><%= post.title %></a></h2>
+  <%= post.content %>
+  <% end %>
+</div>
+<div><a href="/">&larr; Return to home</a></div>

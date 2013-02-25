@@ -10,15 +10,17 @@
 <div class="container">
   <h1>Edit Post</h1>
   <form name="title" action="/post" method="post">
+  <input type="hidden" name="post_id" value="<%= @post.id %>"/>
   <label name="title">Title</label>
   <input name="title" type="string" value="<%= @post.title %>">
-  <!-- not placeholder but figure out how to make it show up in the input fields -->
   <label name="content">Content</label>
   <textarea name="content" cols="60" rows="30"><%= @post.content %></textarea>
   <label name="tags">tag it!</label>
-  <input name="tags" type="string" value="<% @post.tags.each do |tag| %><%= tag[:description] %><% end %>">
+  <input name="tags" type="string" value="<% @post.tags.each do |tag| %><%= tag[:description]+" " %><% end %>">
   <input type="submit" value="Update Post"/>
   </form>
-
 </div>
+
+<div><a href="/">&larr; Return to home</a></div>
+
 
